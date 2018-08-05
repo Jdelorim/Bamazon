@@ -79,12 +79,13 @@ function update(userquant, oldStock,itemID){
     var newStock = oldStock - userquant;
     var ns = newStock.toString();
     
-    console.log(ns,itemID);
-    console.log("UPDATE products SET stock_quantity = " + ns + " WHERE item_id = " + itemID);
-    console.log("UPDATE products SET stock_quantity = " + ns + " WHERE item_id = 1");
+   // console.log(ns,itemID);
+  //  console.log("UPDATE products SET stock_quantity = " + ns + " WHERE item_id = " + itemID);
+  //  console.log("UPDATE products SET stock_quantity = " + ns + " WHERE item_id = 1");
     connection.query("UPDATE products SET stock_quantity = " + ns + " WHERE item_id = 1", function(err,res){
         if(err) throw err;
-        console.log("The new stock is: ",res);
+      //  console.log("The new stock is: ",res);
+      connection.end();
 
     })
     
